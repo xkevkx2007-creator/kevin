@@ -78,7 +78,10 @@ img:hover {
     display: grid;                  /* Ativa o Grid nesses três containers */
     grid-template-columns: 1fr 1fr 1fr ; /* Divide o container em 3 colunas de tamanho igual */
 }
-    
+nav {
+    margin: auto; /* Centraliza o nav horizontalmente */
+    width:max-content; /* O nav ocupará apenas a largura necessária para os links, evitando que se estenda por toda a largura da página */
+}
 }
 
 /* Media query para desktop — Mobile First */
@@ -88,7 +91,16 @@ img:hover {
     display: grid;                  /* Ativa o Grid nesses três containers */
     grid-template-columns: 1fr 1fr 1fr; /* Divide o container em 3 colunas de tamanho igual */
     }
-    
+  
+}
+
+@media (max-width: 47.9rem) {
+    h1 { font-size: 32px; }
+    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa {
+        display: grid;                  /* Ativa o Grid nesses três containers */
+        grid-template-columns: 1fr; /* Em telas menores, cada imagem ocupa toda a largura do container */
+        
+   
 }
 
 @media (max-width: 30rem) {
@@ -98,7 +110,6 @@ img:hover {
         grid-template-columns: 1fr; /* Em telas menores, cada imagem ocupa toda a largura do container */
         
     }
-
 }
 
 #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa{
@@ -110,8 +121,11 @@ img:hover {
 nav {
     display: flex;                  /* Ativa o Flexbox para o nav */
     justify-content: center;        /* Centraliza os itens horizontalmente */
-    gap: 15px;                      /* Espaçamento de 15px entre os links */
-    margin-bottom: 20px;            /* Espaçamento inferior para separar do conteúdo principal */
+    gap: 10px;                      /* Espaçamento de 15px entre os links */
+    margin-bottom: 30px;            /* Espaçamento inferior para separar do conteúdo principal */
+   
+    
+
 }
 nav a {
     color: #ffffff;                /* Define a cor dos links como branco */
@@ -121,7 +135,7 @@ nav a {
 
 footer {
     text-align: center;            /* Centraliza o texto no rodapé */
-    color: #ffffff;                /* Define a cor do texto como branco */
+    color: #fffefe;                /* Define a cor do texto como branco */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte do rodapé */
     border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do rodapé */
     border-radius: 10%; /* Arredonda levemente os cantos do rodapé */
