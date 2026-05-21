@@ -3,6 +3,9 @@ body{
     margin: 0;                    /* Remove as margens padrão do navegador */
     padding: 20px;                /* Adiciona um preenchimento de 20px ao redor do conteúdo */
 }
+html{
+    scroll-behavior: smooth;       /* Habilita a rolagem suave para âncoras */
+}
 
 h2, h3, h4, h5, h6, p{
     text-align: center;        /* Centraliza o texto horizontalmente */
@@ -45,11 +48,12 @@ img:hover {
     animation-iteration-count: infinite; /* A animação se repete infinitamente */
     animation-direction: alternate;      /* A animação vai e volta alternando a direção */
     border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do container1 */
+    border-radius: 10%; /* Arredonda levemente os cantos do container1 */
 }
 
 @keyframes deslizar {
-  from { transform: translateX(-9px); opacity: 1; } /* Estado inicial: elemento deslocado 9px para a esquerda */
-  to   { transform: translateX(9px);  opacity: 1; } /* Estado final: elemento deslocado 9px para a direita */
+  from { transform: translateX(-20px); opacity: 1; } /* Estado inicial: elemento deslocado 10px para a esquerda */
+  to   { transform: translateX(20px);  opacity: 1; } /* Estado final: elemento deslocado 10px para a direita */
 }
 
 /* Media query para tablet — Mobile First */
@@ -73,14 +77,30 @@ img:hover {
 nav {
     display: flex;                  /* Ativa o Flexbox para o nav */
     justify-content: center;        /* Centraliza os itens horizontalmente */
-    gap: 20px;                      /* Espaçamento de 20px entre os links */
+    gap: 30px;                      /* Espaçamento de 30px entre os links */
     margin-bottom: 20px;            /* Espaçamento inferior para separar do conteúdo principal */
+    border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do nav */
+    border-radius: 10%; /* Arredonda levemente os cantos do nav */
+    margin-top: 20px; /* Adiciona um espaçamento superior para separar do conteúdo acima */
+    margin-left: auto; /* Centraliza o nav horizontalmente */
+    padding: 10px; /* Adiciona um preenchimento interno para o conteúdo do nav */
 }
 nav a {
     color: #ffffff;                /* Define a cor dos links como branco */
     text-decoration: none;         /* Remove o sublinhado dos links */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte dos links */
 }
-nav a:hover {
-    text-decoration: underline;    /* Adiciona um sublinhado quando o mouse passa sobre o link */
+
+footer {
+    text-align: center;            /* Centraliza o texto no rodapé */
+    color: #ffffff;                /* Define a cor do texto como branco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte do rodapé */
+    border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do rodapé */
+    border-radius: 10%; /* Arredonda levemente os cantos do rodapé */
+    animation-name: deslizar;        /* Define o nome da animação a ser usada */
+    animation-duration: 0.6s;        /* A animação dura 0.6 segundos */
+    animation-timing-function: ease-out; /* A animação desacelera no final */
+    animation-iteration-count: infinite; /* A animação se repete infinitamente */
+    animation-direction: alternate;      /* A animação vai e volta alternando a direção */
+    border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do container1 */
 }
