@@ -44,7 +44,7 @@ img:hover {
     animation-timing-function: ease-out; /* A animação desacelera no final */
     animation-iteration-count: infinite; /* A animação se repete infinitamente */
     animation-direction: alternate;      /* A animação vai e volta alternando a direção */
-    border: 1px solid rgb(255, 255, 255);
+    border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do container1 */
 }
 
 @keyframes deslizar {
