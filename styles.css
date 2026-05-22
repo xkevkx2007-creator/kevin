@@ -33,6 +33,10 @@ img{
 img:hover {
     transform: scale(1.05); /* imagem cresce levemente ao passar o mouse */
 }
+img:focus {
+    transform: scale(1.05);
+    outline: 2px solid #ff0000;
+}
 
 
 .container{
@@ -72,7 +76,14 @@ img:hover {
     display: grid;                  /* Ativa o Grid nesses três containers */
     grid-template-columns: 1fr 1fr 1fr ; /* Divide o container em 3 colunas de tamanho igual */
 }
-
+}
+@media (max-width: 47.9rem) {
+    h1 { font-size: 32px; }
+    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa {
+        display: grid;                  /* Ativa o Grid nesses três containers */
+        grid-template-columns: 1fr; /* Em telas menores, cada imagem ocupa toda a largura do container */
+    }       
+   
 }
 
 /* Media query para desktop — Mobile First */
@@ -84,15 +95,6 @@ img:hover {
     }
   
   
-}
-
-@media (max-width: 47.9rem) {
-    h1 { font-size: 32px; }
-    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa {
-        display: grid;                  /* Ativa o Grid nesses três containers */
-        grid-template-columns: 1fr; /* Em telas menores, cada imagem ocupa toda a largura do container */
-    }       
-   
 }
 
 @media (max-width: 30rem) {
@@ -152,4 +154,7 @@ video {
     border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do vídeo */
 }
     
-   
+a:focus {
+    outline: 2px solid #b40000;
+    outline-offset: 4px;
+} 
