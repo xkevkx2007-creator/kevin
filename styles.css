@@ -49,12 +49,6 @@ img:hover {
     
 }
 
-@keyframes deslizar {
-  from { transform: translateX(-20px); opacity: 1; } /* Estado inicial: elemento deslocado 10px para a esquerda */
-  to   { transform: translateX(20px);  opacity: 1; } /* Estado final: elemento deslocado 10px para a direita */
-}
-
-
 @keyframes flash{
     0%{
         opacity: 1;
@@ -78,10 +72,7 @@ img:hover {
     display: grid;                  /* Ativa o Grid nesses três containers */
     grid-template-columns: 1fr 1fr 1fr ; /* Divide o container em 3 colunas de tamanho igual */
 }
-nav {
-    margin: auto; /* Centraliza o nav horizontalmente */
-    width:max-content; /* O nav ocupará apenas a largura necessária para os links, evitando que se estenda por toda a largura da página */
-}
+
 }
 
 /* Media query para desktop — Mobile First */
@@ -92,6 +83,7 @@ nav {
     grid-template-columns: 1fr 1fr 1fr; /* Divide o container em 3 colunas de tamanho igual */
     }
   
+  
 }
 
 @media (max-width: 47.9rem) {
@@ -99,7 +91,7 @@ nav {
     #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa {
         display: grid;                  /* Ativa o Grid nesses três containers */
         grid-template-columns: 1fr; /* Em telas menores, cada imagem ocupa toda a largura do container */
-        
+    }       
    
 }
 
@@ -116,6 +108,7 @@ nav {
     text-align: center;
     align-items: center;
     gap: 15px; /* Adiciona um espaço de 20px entre as imagens */
+    margin-top: 20px; /* Adiciona um espaço superior para separar do conteúdo acima */
 }
 
 nav {
@@ -123,8 +116,7 @@ nav {
     justify-content: center;        /* Centraliza os itens horizontalmente */
     gap: 10px;                      /* Espaçamento de 15px entre os links */
     margin-bottom: 30px;            /* Espaçamento inferior para separar do conteúdo principal */
-   
-    
+   margin-top: 20px;               /* Adiciona um espaço superior para separar do conteúdo acima */
 
 }
 nav a {
