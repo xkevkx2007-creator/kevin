@@ -1,160 +1,150 @@
 body{
     background-color: black;
-    margin: 0;                    /* Remove as margens padrão do navegador */
-    padding: 20px;                /* Adiciona um preenchimento de 20px ao redor do conteúdo */
+    margin: 0;
+    padding: 20px;                /* MEDIDA FIXA: 20px sempre iguais, independente da tela */
 }
 html{
-    scroll-behavior: smooth;       /* Habilita a rolagem suave para âncoras */
+    scroll-behavior: smooth;
 }
 
 h2, h3, h4, h5, h6, p{
-    text-align: center;        /* Centraliza o texto horizontalmente */
-    color: #ffffff;            /* Define a cor do texto como branco */
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte, tentando cada uma em ordem até encontrar uma disponível */
+    text-align: center;
+    color: #ffffff;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1{
-    font-family: 'Russo One', sans-serif; /* Define a fonte do título principal como Russo One */
-    color: #ff0000;                       /* Define a cor do h1 como vermelho */
-    animation: flash 1.5s infinite; /* Adiciona uma animação de piscar (flash) com duração de 0.8s que se repete infinitamente */
+    font-family: 'Russo One', sans-serif;
+    color: #ff0000;
+    animation: flash 1.5s infinite; /* ANIMAÇÃO: 'flash' dura 1.5s e repete infinitamente */
 }
-
 
 img{
-    width: 90%;       /* A imagem ocupa 90% da largura do elemento pai (medida relativa) */
-    max-width: 450px; /* Limite máximo de 450px para a imagem não crescer demais (medida fixa) */
-    margin: auto;     /* Centraliza a imagem horizontalmente */
-    border-radius: 5%; /* Arredonda levemente os cantos da imagem */
-    transition: transform 0.3s ease; /* Adiciona uma transição suave para a transformação da imagem */
-    border: 3px solid rgb(255, 255, 255);
-    
-    
+    width: 90%;       /* MEDIDA RELATIVA: ocupa 90% do elemento pai, se adapta ao tamanho da tela */
+    max-width: 450px; /* MEDIDA FIXA: limite máximo absoluto de 450px */
+    margin: auto;
+    border-radius: 5%; /* MEDIDA RELATIVA: bordas arredondadas proporcionais ao tamanho da imagem */
+    transition: transform 0.3s ease; /* ANIMAÇÃO: transição suave de 0.3s ao fazer hover */
+    border: 3px solid rgb(255, 255, 255); /* MEDIDA FIXA: borda sempre de 3px */
 }
 img:hover {
-    transform: scale(1.05); /* imagem cresce levemente ao passar o mouse */
+    transform: scale(1.05); /* ANIMAÇÃO: escala a imagem em 5% ao passar o mouse */
 }
 img:focus {
-    transform: scale(1.05);
+    transform: scale(1.05); /* ANIMAÇÃO: mesma escala ativada por teclado (acessibilidade) */
     outline: 2px solid #ff0000;
 }
 
-
 .container{
-    align-items: center;    /* Centraliza os filhos no eixo cruzado (horizontal) */
-    display: flex;          /* Ativa o Flexbox neste container */
-    text-align: center;     /* Centraliza o texto dentro do container */
-    flex-direction: column; /* Organiza os filhos em coluna, de cima para baixo */
+    align-items: center;    /* FLEXBOX: centraliza filhos no eixo cruzado (horizontal) */
+    display: flex;          /* FLEXBOX: ativa o modelo de layout Flexbox */
+    text-align: center;
+    flex-direction: column; /* FLEXBOX: organiza os filhos em coluna (eixo principal = vertical) */
 }
 
 #container1{
     background-color: black;
-    border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do container1 */
-    border-radius: 10%; /* Arredonda levemente os cantos do container1 */
-    
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 10%; /* MEDIDA RELATIVA: arredondamento proporcional ao tamanho do elemento */
 }
 
-@keyframes flash{
+@keyframes flash{           /* ANIMAÇÃO: define os keyframes da animação 'flash' */
     0%{
-        opacity: 1;
+        opacity: 1;         /* ANIMAÇÃO: começa totalmente visível */
     }
-
     50%{
-        opacity: 0.3;
+        opacity: 0.3;       /* ANIMAÇÃO: no meio do ciclo fica quase transparente */
     }
-
     100%{
-        opacity: 1;
-
-    color: rgb(255, 0, 0);
+        opacity: 1;         /* ANIMAÇÃO: termina totalmente visível novamente */
+        color: rgb(255, 0, 0);
     }
 }
 
-/* Media query para tablet — Mobile First */
-@media (min-width: 48rem) {
-    h1 { font-size: 40px; } 
+/* MOBILE FIRST + RESPONSIVIDADE: breakpoint para tablet (min-width começa do menor para o maior) */
+@media (min-width: 48rem) {          /* MEDIDA RELATIVA: 48rem = 768px, escala com o root font-size */
+    h1 { font-size: 40px; }          /* MEDIDA FIXA: tamanho fixo para tablet */
     #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa{
-    display: grid;                  /* Ativa o Grid nesses três containers */
-    grid-template-columns: 1fr 1fr 1fr ; /* Divide o container em 3 colunas de tamanho igual */
-}
-}
-@media (max-width: 47.9rem) {
-    h1 { font-size: 32px; }
-    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa {
-        display: grid;                  /* Ativa o Grid nesses três containers */
-        grid-template-columns: 1fr; /* Em telas menores, cada imagem ocupa toda a largura do container */
-    }       
-   
-}
-
-/* Media query para desktop — Mobile First */
-@media (min-width: 75rem) {
-    h1 { font-size: 56px; } 
-    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa{
-    display: grid;                  /* Ativa o Grid nesses três containers */
-    grid-template-columns: 1fr 1fr 1fr; /* Divide o container em 3 colunas de tamanho igual */
+        display: grid;                      /* GRID: ativa o layout de grade */
+        grid-template-columns: 1fr 1fr 1fr; /* GRID + MEDIDA RELATIVA: 3 colunas de tamanho igual e flexível */
     }
-  
-  
 }
 
-@media (max-width: 30rem) {
-    h1 { font-size: 24px; }
+/* RESPONSIVIDADE: estilo para telas menores que tablet */
+@media (max-width: 47.9rem) {        /* MEDIDA RELATIVA: limite máximo para mobile */
+    h1 { font-size: 32px; }          /* MEDIDA FIXA: tamanho reduzido para telas pequenas */
     #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa {
-        display: grid;                  /* Ativa o Grid nesses três containers */
-        grid-template-columns: 1fr; /* Em telas menores, cada imagem ocupa toda a largura do container */
-        
+        display: grid;               /* GRID: mantém o grid ativo */
+        grid-template-columns: 1fr;  /* GRID + RESPONSIVIDADE: 1 coluna única em mobile */
+    }
+}
+
+/* MOBILE FIRST + RESPONSIVIDADE: breakpoint para desktop */
+@media (min-width: 75rem) {          /* MEDIDA RELATIVA: 75rem = 1200px */
+    h1 { font-size: 56px; }          /* MEDIDA FIXA: tamanho maior para telas grandes */
+    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa{
+        display: grid;                      /* GRID: ativa o layout de grade */
+        grid-template-columns: 1fr 1fr 1fr; /* GRID + MEDIDA RELATIVA: 3 colunas iguais no desktop */
+    }
+}
+
+/* RESPONSIVIDADE: estilo para telas muito pequenas (smartphones pequenos) */
+@media (max-width: 30rem) {          /* MEDIDA RELATIVA: 30rem = 480px */
+    h1 { font-size: 24px; }          /* MEDIDA FIXA: tamanho mínimo para telas muito pequenas */
+    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa {
+        display: grid;               /* GRID: mantém o grid ativo */
+        grid-template-columns: 1fr;  /* GRID + RESPONSIVIDADE: coluna única para mobile pequeno */
     }
 }
 
 #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa{
     text-align: center;
     align-items: center;
-    gap: 15px; /* Adiciona um espaço de 20px entre as imagens */
-    margin-top: 20px; /* Adiciona um espaço superior para separar do conteúdo acima */
+    gap: 15px;       /* MEDIDA FIXA: espaço fixo de 15px entre os itens do grid */
+    margin-top: 20px; /* MEDIDA FIXA: espaço superior fixo de 20px */
 }
 
 nav {
-    display: flex;                  /* Ativa o Flexbox para o nav */
-    justify-content: center;        /* Centraliza os itens horizontalmente */
-    gap: 10px;                      /* Espaçamento de 15px entre os links */
-    margin-bottom: 30px;            /* Espaçamento inferior para separar do conteúdo principal */
-   margin-top: 20px;               /* Adiciona um espaço superior para separar do conteúdo acima */
-
+    display: flex;           /* FLEXBOX: ativa o Flexbox no nav */
+    justify-content: center; /* FLEXBOX: centraliza os links no eixo principal (horizontal) */
+    gap: 10px;               /* FLEXBOX + MEDIDA FIXA: espaço de 10px entre os links */
+    margin-bottom: 30px;     /* MEDIDA FIXA: espaço inferior fixo de 30px */
+    margin-top: 20px;        /* MEDIDA FIXA: espaço superior fixo de 20px */
 }
 nav a {
-    color: #ffffff;                /* Define a cor dos links como branco */
-    text-decoration: none;         /* Remove o sublinhado dos links */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte dos links */
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 footer {
-    text-align: center;            /* Centraliza o texto no rodapé */
-    color: #fffefe;                /* Define a cor do texto como branco */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte do rodapé */
-    border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do rodapé */
-    border-radius: 10%; /* Arredonda levemente os cantos do rodapé */
-    border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do container1 */
+    text-align: center;
+    color: #fffefe;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 3px solid rgb(255, 255, 255); /* MEDIDA FIXA: borda sempre de 3px */
+    border-radius: 10%; /* MEDIDA RELATIVA: arredondamento proporcional ao tamanho do footer */
 }
 
 span {
-    color: rgb(255, 0, 0); /* Define a cor do texto dentro do span como vermelho */
-    animation: flash 1.5s infinite; /* Adiciona uma animação de piscar (flash) com duração de 0.8s que se repete infinitamente */
+    color: rgb(255, 0, 0);
+    animation: flash 1.5s infinite; /* ANIMAÇÃO: reutiliza a animação 'flash' definida nos keyframes */
 }
+
 iframe {
-    border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do iframe */
-    border-radius: 10%; /* Arredonda levemente os cantos do iframe */
-    margin-top: 20px; /* Adiciona um espaço superior para separar do conteúdo acima */
+    border: 3px solid rgb(255, 255, 255); /* MEDIDA FIXA: borda de 3px */
+    border-radius: 10%; /* MEDIDA RELATIVA: arredondamento proporcional */
+    margin-top: 20px;   /* MEDIDA FIXA: espaço superior de 20px */
 }
 
 video {
-    width: 90%;       /* O vídeo ocupa 90% da largura do elemento pai (medida relativa) */
-    max-width: 900px; /* Limite máximo de 900px para o vídeo não crescer demais (medida fixa) */
-    margin: auto;     /* Centraliza o vídeo horizontalmente */
-    border-radius: 5%; /* Arredonda levemente os cantos do vídeo */
-    border: 3px solid rgb(255, 255, 255); /* Adiciona uma borda branca de 3px ao redor do vídeo */
+    width: 90%;       /* MEDIDA RELATIVA: ocupa 90% do pai, responsivo */
+    max-width: 900px; /* MEDIDA FIXA: limite máximo de 900px */
+    margin: auto;
+    border-radius: 5%; /* MEDIDA RELATIVA: bordas proporcionais */
+    border: 3px solid rgb(255, 255, 255); /* MEDIDA FIXA: borda de 3px */
 }
-    
+
 a:focus {
-    outline: 2px solid #b40000;
-    outline-offset: 4px;
-} 
+    outline: 2px solid #b40000; /* MEDIDA FIXA: contorno de acessibilidade de 2px */
+    outline-offset: 4px;        /* MEDIDA FIXA: distância fixa de 4px entre o link e o contorno */
+}
